@@ -6,3 +6,7 @@ Changed URL in setup.py in an effort to fix a problem with pip install cmsplugin
 -----
 Added mailchimp_form
 Added zip_safe=False to setup
+
+0.1.3
+-----
+Fixed URL of open graph image meta tag so it is absolute, not relative
