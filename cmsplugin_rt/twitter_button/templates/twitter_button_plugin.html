@@ -1,0 +1,18 @@
+{% comment %}
+<!-- Example from Twitter website: -->
+<!-- 
+<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="tweettext" data-size="large" data-hashtags="mytag">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+-->
+{% endcomment %}
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ instance.tweet_text }}" 
+{% if instance.large_button %}data-size="large"{% endif %}
+data-hashtags="{{ instance.hash_tag }}">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+

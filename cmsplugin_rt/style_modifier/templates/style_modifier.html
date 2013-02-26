@@ -1,0 +1,22 @@
+{% load sekizai_tags %}
+{% addtoblock "css" %}
+<style type="text/css">
+{{ instance.mod_class }} {
+    {% if instance.background_image %}background-image: url({{ instance.background_image.url }});
+    background-repeat: no-repeat;
+    {% endif %}
+    {% if instance.background_color %}background-color: {{ instance.background_color }};{% endif %}
+    {% if instance.text_color %}color: {{ instance.text_color }};{% endif %}
+    {% if instance.top_gradient_color and instance.bottom_gradient_color %}
+    background-image: -moz-linear-gradient(top,{{ instance.bottom_gradient_color }},{{ instance.top_gradient_color }});
+	background-image: -webkit-gradient(linear,0 0,0 100%,from({{ instance.bottom_gradient_color }}),to({{ instance.top_gradient_color }}));
+	background-image: -webkit-linear-gradient(top,{{ instance.bottom_gradient_color }},{{ instance.top_gradient_color }});
+	background-image: -o-linear-gradient(top,{{ instance.bottom_gradient_color }},{{ instance.top_gradient_color }});
+	background-image: linear-gradient(to bottom,{{ instance.bottom_gradient_color }},{{ instance.top_gradient_color }});
+    {% endif %}
+    {% if instance.text_shadow %}text-shadow: {{ instance.text_shadow }};{% endif %} 
+    {% if instance.text_align %}text-align: {{ instance.text_align }};{% endif %} 
+    {% if instance.freeform %}{{ instance.freeform }};{% endif %}
+}
+</style>
+{% endaddtoblock %}

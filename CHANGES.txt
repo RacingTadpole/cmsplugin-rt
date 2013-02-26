@@ -1,0 +1,3 @@
+0.1.1
+-----
+Changed URL in setup.py in an effort to fix a problem with pip install cmsplugin-rt

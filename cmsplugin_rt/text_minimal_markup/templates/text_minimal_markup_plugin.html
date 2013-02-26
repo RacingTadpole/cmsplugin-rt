@@ -1,0 +1,3 @@
+{% load allow_special %}
+{% if instance.title %}<h2>{{ instance.title }}</h2>{% endif %}
+<p>{{ instance.promo_text|allow_special|linebreaksbr }}</p>

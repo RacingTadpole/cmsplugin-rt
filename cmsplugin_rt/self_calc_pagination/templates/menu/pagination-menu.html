@@ -1,0 +1,37 @@
+{% load menu_tags %}
+{% load i18n %} 
+{% load descendant_selected %}
+
+{# find the active page in the tree. Assume it must be a grandchild or great-grandchild of the softroot #}
+{% for child in children %}
+{# this level is the children of the softroot, e.g. Instructions, Challenges #}
+{% for grandchild in child.children %}
+{% descendant_selected grandchild as show_this_branch %}   {# only show this menu if it includes a selected node #}
+{% if show_this_branch %}
+	{% if grandchild.selected %}  {# the first, ancestor page #}
+	<li class="disabled"><a href="#">&laquo;</a></li>
+	<li class="active"><a href="#">1</a></li>
+	{% else %}
+	<li><a href="{{ grandchild.attr.redirect_url|default:grandchild.get_absolute_url }}">&laquo;</a></li>
+	<li><a href="{{ grandchild.attr.redirect_url|default:grandchild.get_absolute_url }}">1</a></li>
+	{% endif %} {# the first ancestor page was active #}
+	{% for ggchild in grandchild.children %}
+	<li class="{% if ggchild.selected %}active{% endif %}"><a href="{{ ggchild.attr.redirect_url|default:ggchild.get_absolute_url }}">
+	{{ ggchild.get_menu_title }}</a></li>
+	{% endfor %}
+	
+	{# now for the Next page #}
+	{% if grandchild.selected %}  {# the first, ancestor page (again!) #}
+	<li><a href="{{ grandchild.children.0.attr.redirect_url|default:grandchild.children.0.get_absolute_url }}">&raquo;</a></li>
+	{% else %}   {# the first, ancestor page (again!) #}
+	{% for ggchild in grandchild.children %}{% if ggchild.selected %}
+	{% if ggchild.get_next_sibling %}
+	<li><a href="{{ ggchild.get_next_sibling.attr.redirect_url|default:ggchild.get_next_sibling.get_absolute_url }}">&raquo;</a></li>
+	{% else %}
+	<li class="disabled"><a href="#">&raquo;</a></li>
+	{% endif %}
+	{% endif %}{% endfor %}
+	{% endif %}   {# the first, ancestor page (again!) #}
+{% endif %} {# show_this_branch #}
+{% endfor %}
+{% endfor %}

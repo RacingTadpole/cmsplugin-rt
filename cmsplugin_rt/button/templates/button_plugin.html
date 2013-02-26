@@ -1,0 +1,7 @@
+{% load allow_special %}
+<a 
+  class="btn {{ instance.button_type }} {{ instance.button_size }}" 
+  href="{{ link }}">
+    {{ instance.button_text|allow_special }}
+    {% if instance.arrows %} &raquo; {% endif %}
+</a>

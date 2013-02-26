@@ -1,0 +1,4 @@
+include LICENSE.txt
+include CHANGES.txt
+recursive-include docs *
+recursive-include cmsplugin_rt/*/templates *
