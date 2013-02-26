@@ -1,3 +1,8 @@
 0.1.1
 -----
 Changed URL in setup.py in an effort to fix a problem with pip install cmsplugin-rt
+
+0.1.2
+-----
+Added mailchimp_form
+Added zip_safe=False to setup

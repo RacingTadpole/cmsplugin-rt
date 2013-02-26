@@ -6,14 +6,15 @@ This package contains a number of basic plugins to kick start your Django-CMS pr
 Some of them use classes appropriate for Twitter Bootstrap, but my intention is to broaden this.
 
 button                     a Twitter Bootstrap button, with html special characters allowed
-text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special characters allowed
+text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;
 resizeable_picture         a subclass of cms.plugin.picture which allows absolute or % width and height
-self_calc_pagination       (tailored to Twitter Bootstrap)
-hbar                       a simple hbar
-spacer                     adds a .spacer div, which I use to switch off float left and right
+self_calc_pagination       shows pagination links where pages after 1 are all the children of page 1 (tailored to Twitter Bootstrap)
+hbar                       a simple html hbar element
+spacer                     adds a .spacer div, which I style as clear:both, to switch off float:left and float:right
 
 facebook_button            lots of options allowed
 twitter_button             lots of options allowed
+mailchimp_form             an inline mailchimp form (tailored to Twitter Bootstrap)
 
 style_modifier             a plugin that lets the admin change the css directly (tailored to Twitter Bootstrap)
 
@@ -40,6 +41,7 @@ Quick start
           'cmsplugin_rt.button',
           'cmsplugin_rt.facebook_button',
           'cmsplugin_rt.hbar',
+          'cmsplugin_rt.mailchimp_form',
           'cmsplugin_rt.meta_icons',
           'cmsplugin_rt.open_graph',
           'cmsplugin_rt.resizeable_picture',

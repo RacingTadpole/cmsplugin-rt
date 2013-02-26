@@ -1,0 +1,16 @@
+{% load sekizai_tags %}
+<!-- Begin MailChimp Signup Form
+{% addtoblock "css" %}<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">{% endaddtoblock %}
+{% addtoblock "css" %}
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+</style>
+{% endaddtoblock %}-->
+<div id="mc_embed_signup">
+  <form action="{{ instance.form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<label for="mce-EMAIL">{{ instance.title }}</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+	<input type="submit" value="{{ instance.subscribe_text }}" name="subscribe" id="mc-embedded-subscribe" class="btn {{ instance.button_type }} {{ instance.button_size }}">
+  </form>
+</div>
+<!--End mc_embed_signup-->
