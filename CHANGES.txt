@@ -10,3 +10,8 @@ Added zip_safe=False to setup
 0.1.3
 -----
 Fixed URL of open graph image meta tag so it is absolute, not relative
+
+0.1.4
+-----
+Added navbar plugin
+Added a tests directory, not functional yet (can you help me fix it?)
