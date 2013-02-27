@@ -1,0 +1,30 @@
+{% load menu_tags %}
+{% block navbar %}
+      <div class="navbar {% if instance.inverted %}navbar-inverse {% endif %}{{ instance.navbar_type }}">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="/">{% block pagename %}{{ instance.brand }}{% endblock %}</a>
+              <ul class="nav">
+                {% if not instance.brand %}
+                <li class="{% ifequal request.path_info '/' %}active{% endifequal %}"><a href="/">Home</a></li>
+                {% endif %}
+                {% if instance.link_to_children %}
+                {% show_menu_below_id "home" 0 100 0 100 "menu/toolbar-menu.html" %} {# needs home page to have id 'home'; won't show under a softroot #}
+                {% else %}
+                <li class="{% ifequal request.path_info '/about/' %}active{% endifequal %}"><a href="/about/">About</a></li>
+                <li class="{% ifequal request.path_info '/contact/' %}active{% endifequal %}"><a href="/contact/">Contact</a></li>
+                {% endif %}
+              </ul>
+              {% block navbar_user %}
+              {% if user.is_authenticated and user.is_staff %}
+              <ul class="nav pull-right">
+                <li><a href="/admin/cms/page/{{ request.current_page.id }}"><i class="icon-file {{ instance.icon_type }}"></i></a></li>
+                <li><a href="/admin/"><i class="icon-star {{ instance.icon_type }}"></i></a></li>
+              </ul>
+              {% endif %}
+              {% endblock %}
+          </div>
+        </div>
+      </div>
+ {% endblock %}
+
