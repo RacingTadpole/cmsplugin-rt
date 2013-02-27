@@ -44,6 +44,7 @@ Quick start
           'cmsplugin_rt.hbar',
           'cmsplugin_rt.mailchimp_form',
           'cmsplugin_rt.meta_icons',
+          'cmsplugin_rt.navbar',
           'cmsplugin_rt.open_graph',
           'cmsplugin_rt.resizeable_picture',
           'cmsplugin_rt.self_calc_pagination',
