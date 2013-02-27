@@ -8,25 +8,15 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'StyleModifierPluginModel'
-        db.create_table('cmsplugin_stylemodifierpluginmodel', (
-            ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
-            ('mod_class', self.gf('django.db.models.fields.CharField')(max_length=120)),
-            ('background_image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
-            ('background_color', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
-            ('top_gradient_color', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
-            ('bottom_gradient_color', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
-            ('text_color', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
-            ('text_shadow', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
-            ('text_align', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
-            ('freeform', self.gf('django.db.models.fields.CharField')(max_length=96, blank=True)),
-        ))
-        db.send_create_signal('style_modifier', ['StyleModifierPluginModel'])
+        # Adding field 'StyleModifierPluginModel.font_family'
+        db.add_column('cmsplugin_stylemodifierpluginmodel', 'font_family',
+                      self.gf('django.db.models.fields.CharField')(default='', max_length=64, blank=True),
+                      keep_default=False)
 
 
     def backwards(self, orm):
-        # Deleting model 'StyleModifierPluginModel'
-        db.delete_table('cmsplugin_stylemodifierpluginmodel')
+        # Deleting field 'StyleModifierPluginModel.font_family'
+        db.delete_column('cmsplugin_stylemodifierpluginmodel', 'font_family')
 
 
     models = {
@@ -57,6 +47,7 @@ class Migration(SchemaMigration):
             'background_image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'bottom_gradient_color': ('django.db.models.fields.CharField', [], {'max_length': '32', 'blank': 'True'}),
             'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            'font_family': ('django.db.models.fields.CharField', [], {'max_length': '64', 'blank': 'True'}),
             'freeform': ('django.db.models.fields.CharField', [], {'max_length': '96', 'blank': 'True'}),
             'mod_class': ('django.db.models.fields.CharField', [], {'max_length': '120'}),
             'text_align': ('django.db.models.fields.CharField', [], {'max_length': '32', 'blank': 'True'}),

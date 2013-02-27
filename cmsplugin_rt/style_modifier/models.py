@@ -36,8 +36,9 @@ class StyleModifierPluginModel(CMSPlugin):
     background_color = models.CharField(max_length=32, blank=True, help_text=_("Use a simple name, e.g. green or darkgreen (no spaces!), or an RGB code like #f2f2f0. Leave blank for default."))
     top_gradient_color = models.CharField(max_length=32, blank=True, help_text=_("Use a simple name or RGB code. Leave blank for default."))
     bottom_gradient_color = models.CharField(max_length=32, blank=True, help_text=_("Use a simple name or RGB code. Leave blank for default."))
+    font_family = models.CharField(max_length=64, blank=True, help_text=_("Leave blank for default."))
     text_color = models.CharField(max_length=32, blank=True, help_text=_("Use a simple name or RGB code. Leave blank for default."))
-    text_shadow = models.CharField(max_length=32, blank=True, help_text=_("Use a simple name or RGB code. Leave blank for default."))
+    text_shadow = models.CharField(max_length=32, blank=True, help_text=_("Horizontal and vertical shadow distance followed by a color, e.g. 2px 2px black. Leave blank for default."))
     text_align =  models.CharField(max_length=32, blank=True, choices=ALIGN_CHOICES, help_text=_("Leave blank for default."))
     freeform =  models.CharField(max_length=96, blank=True, help_text=_("Enter your own css if desired, e.g. padding: 5px;"))
     def __unicode__(self):

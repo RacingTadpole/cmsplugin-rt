@@ -15,3 +15,8 @@ Fixed URL of open graph image meta tag so it is absolute, not relative
 -----
 Added navbar plugin
 Added a tests directory, not functional yet (can you help me fix it?)
+
+0.1.5
+-----
+Added google_fonts and google_analytics plugins
+Revised style_modifier to include font_family
