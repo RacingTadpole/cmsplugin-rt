@@ -19,7 +19,7 @@ class Migration(SchemaMigration):
             ('og_site_name', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
             ('og_description', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
         ))
-        db.send_create_signal('open-graph', ['OpenGraphPluginModel'])
+        db.send_create_signal('open_graph', ['OpenGraphPluginModel'])
 
 
     def backwards(self, orm):
@@ -62,4 +62,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['open-graph']
+    complete_apps = ['open_graph']

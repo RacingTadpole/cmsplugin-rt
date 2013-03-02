@@ -20,3 +20,12 @@ Added a tests directory, not functional yet (can you help me fix it?)
 -----
 Added google_fonts and google_analytics plugins
 Revised style_modifier to include font_family
+
+0.1.6
+-----
+Added p to style modifier
+Added css width and height to resizeable picture as well as img properties
+
+0.2.0
+-----
+Fixed South migration files to use the correct plugin names (as I changed their names earlier without doing this)

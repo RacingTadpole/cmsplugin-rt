@@ -50,4 +50,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['cmsplugin_mailchimp']
+    complete_apps = ['mailchimp_form']

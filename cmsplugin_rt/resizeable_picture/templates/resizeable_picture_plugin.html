@@ -2,6 +2,6 @@
 {% if link %}<a href="{{ link }}">{% endif %}
 <img src="{{ picture.image.url }}" alt="{{ picture.alt }}"{% if picture.longdesc %} title="{{ picture.longdesc }}"{% endif %}
 {% if width_percent %} style="width:{{ width_percent }}"{% endif %}{% if height_percent %} style="height:{{ height_percent }}"{% endif %}
-{% if width %} width="{{ width }}"{% endif %}{% if height %} height="{{ height }}"{% endif %}/>
+{% if width %} width="{{ width }}" style="width:{{ width }}px"{% endif %}{% if height %} height="{{ height }}" style="height:{{ height }}px"{% endif %}/>
 {% if link %}</a>{% endif %}
 </span>

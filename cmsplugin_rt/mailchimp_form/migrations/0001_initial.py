@@ -14,7 +14,7 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.CharField')(default='Subscribe to our mailing list', max_length=120, blank=True)),
             ('link', self.gf('django.db.models.fields.URLField')(max_length=200)),
         ))
-        db.send_create_signal('cmsplugin_mailchimp', ['MailChimpPluginModel'])
+        db.send_create_signal('mailchimp_form', ['MailChimpPluginModel'])
 
 
     def backwards(self, orm):
@@ -52,4 +52,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['cmsplugin_mailchimp']
+    complete_apps = ['mailchimp_form']

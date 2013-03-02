@@ -20,7 +20,7 @@ class Migration(SchemaMigration):
             ('font', self.gf('django.db.models.fields.CharField')(default='verdana', max_length=50)),
             ('color_scheme', self.gf('django.db.models.fields.CharField')(default='light', max_length=50)),
         ))
-        db.send_create_signal('facebook-button', ['FacebookButtonPluginModel'])
+        db.send_create_signal('facebook_button', ['FacebookButtonPluginModel'])
 
 
     def backwards(self, orm):
@@ -64,4 +64,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['facebook-button']
+    complete_apps = ['facebook_button']

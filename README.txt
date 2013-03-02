@@ -7,7 +7,7 @@ Some of them use classes appropriate for Twitter Bootstrap, but my intention is 
 
 button                     a Twitter Bootstrap button, with html special characters allowed
 text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;
-resizeable_picture         a subclass of cms.plugin.picture which allows absolute or % width and height
+resizeable_picture         a subclass of cms.plugin.picture which allows absolute or % width and height (sorry about the spelling mistake here!)
 navbar                     a Twitter Bootstrap navbar, with self-calculating links to the home page's children, and quick links for admins
 self_calc_pagination       shows pagination links where pages after 1 are all the children of page 1 (tailored to Twitter Bootstrap)
 hbar                       a simple html <hr> element

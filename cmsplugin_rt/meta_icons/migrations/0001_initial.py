@@ -14,7 +14,7 @@ class Migration(SchemaMigration):
             ('fav_icon', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
             ('touch_icon', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
         ))
-        db.send_create_signal('meta-icons', ['MetaIconsPluginModel'])
+        db.send_create_signal('meta_icons', ['MetaIconsPluginModel'])
 
 
     def backwards(self, orm):
@@ -52,4 +52,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['meta-icons']
+    complete_apps = ['meta_icons']

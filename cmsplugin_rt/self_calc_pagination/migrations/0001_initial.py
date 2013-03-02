@@ -17,4 +17,4 @@ class Migration(SchemaMigration):
         
     }
 
-    complete_apps = ['self-calc-pagination']
+    complete_apps = ['self_calc_pagination']

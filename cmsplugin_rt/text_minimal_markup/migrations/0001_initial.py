@@ -14,7 +14,7 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.CharField')(max_length=120, blank=True)),
             ('promo_text', self.gf('django.db.models.fields.TextField')(blank=True)),
         ))
-        db.send_create_signal('text-minimal-markup', ['TextMinimalMarkupPluginModel'])
+        db.send_create_signal('text_minimal_markup', ['TextMinimalMarkupPluginModel'])
 
 
     def backwards(self, orm):
@@ -52,4 +52,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['text-minimal-markup']
+    complete_apps = ['text_minimal_markup']

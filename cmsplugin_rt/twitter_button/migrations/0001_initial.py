@@ -15,7 +15,7 @@ class Migration(SchemaMigration):
             ('hash_tag', self.gf('django.db.models.fields.CharField')(default=None, max_length=60, blank=True)),
             ('large_button', self.gf('django.db.models.fields.BooleanField')(default=False)),
         ))
-        db.send_create_signal('twitter-button', ['TwitterButtonPluginModel'])
+        db.send_create_signal('twitter_button', ['TwitterButtonPluginModel'])
 
 
     def backwards(self, orm):
@@ -54,4 +54,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['twitter-button']
+    complete_apps = ['twitter_button']

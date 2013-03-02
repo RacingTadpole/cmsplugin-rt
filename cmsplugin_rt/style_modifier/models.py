@@ -12,10 +12,11 @@ class StyleModifierPluginModel(CMSPlugin):
     Adds a style element to change the css styling on the fly
     """
     CLASS_CHOICES = (("body", _("everything")),
+                     ("p", _("paragraphs")),
                      (".navbar", _("navigation bar")),
                      (".jumbotron", _("jumbo banner")),
                      (".hero-unit", _("hero")),
-                     (".row", _("main content")),
+                     (".container", _("containers")),
                      (".btn", _("buttons")),
                      (".btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled]", _("active buttons")),
                      (".btn-primary", _("primary buttons")),

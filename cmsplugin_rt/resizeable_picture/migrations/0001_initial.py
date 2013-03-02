@@ -20,7 +20,7 @@ class Migration(SchemaMigration):
             ('img_width', self.gf('django.db.models.fields.CharField')(max_length=10, blank=True)),
             ('img_height', self.gf('django.db.models.fields.CharField')(max_length=10, blank=True)),
         ))
-        db.send_create_signal('resizable-picture', ['ResizeablePicturePluginModel'])
+        db.send_create_signal('resizeable_picture', ['ResizeablePicturePluginModel'])
 
 
     def backwards(self, orm):
@@ -99,4 +99,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['resizable-picture']
+    complete_apps = ['resizeable_picture']
