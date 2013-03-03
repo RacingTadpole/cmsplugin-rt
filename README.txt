@@ -3,7 +3,8 @@ cmsplugin-rt
 =====
 
 This package contains a number of basic plugins to kick start your Django-CMS project.
-Some of them use classes appropriate for Twitter Bootstrap, but my intention is to broaden this.
+Some default to the Twitter Bootstrap look, but can be adjusted using the setting RT_FRONT_END_FRAMEWORK
+Currently "BOOTSTRAP" and "JQUERY-MOBILE" are recognised.
 
 button                     a Twitter Bootstrap button, with html special characters allowed
 text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;
@@ -19,7 +20,9 @@ mailchimp_form             an inline mailchimp form (tailored to Twitter Bootstr
 google_font                link to Google fonts (use them via the style modifier plugin)
 google_analytics           include tracking code for Google analytics
 
-style_modifier             a plugin that lets the admin change the css directly (tailored to Twitter Bootstrap)
+style_modifier             a plugin that lets the admin change the css directly
+                           (a number of Twitter Bootstrap and JQueryMobile classes are pre-configured)
+                           add RT_MORE_STYLE_CLASSES to settings.py to add more options to the drop-down list
 
 meta_icons                 include favicon and Apple touch icons in your header
 open_graph                 include open-graph tags in your header
@@ -58,7 +61,20 @@ Quick start
           'cmsplugin_rt.twitter_button',
       )
 
-2. Run `python manage.py syncdb` (or use `python manage.py migrate` if you are using South) to create the models.
+2. If you are using JQueryMobile, add to settings.py:
 
-3. Add the plugins to your CMS pages in the admin panel.
+      RT_FRONT_END_FRAMEWORK = "JQUERY-MOBILE"  # "BOOTSTRAP" is the default; only these two are known
+
+   You can also set this to "" to remove Style Modifier's default Bootstrap class options.
+
+3. To add custom classes to the Style Modifier, add to settings.py something like this:
+
+      from django.utils.translation import ugettext_lazy as _
+      RT_MORE_STYLE_CLASSES = ((".banner", _("banner")),
+                     (".warning", _("warning text")),      # example classes only
+                     )
+
+4. Run `python manage.py syncdb` (or use `python manage.py migrate` if you are using South) to create the models.
+
+5. Add the plugins to your CMS pages in the admin panel.
 

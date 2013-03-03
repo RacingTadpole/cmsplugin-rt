@@ -29,3 +29,7 @@ Added css width and height to resizeable picture as well as img properties
 0.2.0
 -----
 Fixed South migration files to use the correct plugin names (as I changed their names earlier without doing this)
+
+0.3.0
+-----
+Added support for JQueryMobile in StyleModifier plugin.

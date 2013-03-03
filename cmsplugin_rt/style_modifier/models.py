@@ -6,27 +6,50 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from os.path import basename
 from django.db import models
+from django.conf import settings
 
 class StyleModifierPluginModel(CMSPlugin):
     """
     Adds a style element to change the css styling on the fly
     """
-    CLASS_CHOICES = (("body", _("everything")),
+    GENERIC_CLASSES = (("body", _("everything")),
                      ("p", _("paragraphs")),
+                     ("hr", _("horizontal lines")),
+                     (".plugin_picture", _("picture plugins")),
+                     (".footer", _("footer")),
+                     (".footer a, .footer a:link, .footer a:visited, .footer a:hover, .footer a:active", _("footer links")),
+                     )
+    
+    BOOTSTRAP_CLASSES = (
                      (".navbar", _("navigation bar")),
-                     (".jumbotron", _("jumbo banner")),
                      (".hero-unit", _("hero")),
+                     (".jumbotron", _("jumbo banner")),
                      (".container", _("containers")),
                      (".btn", _("buttons")),
                      (".btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled]", _("active buttons")),
                      (".btn-primary", _("primary buttons")),
                      (".btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled]", _("active primary buttons")),
-                     ("hr", _("horizontal lines")),
-                     ('.plugin_picture', _("picture plugins")),
                      (".dropdown-menu", _("dropdown menus")),
                      (".sidenav a", _("side navigation menu")),
                      (".sidenav .active a", _("active side nav menu")),
                      )
+
+    JQUERY_MOBILE_CLASSES = (
+                     (".ui-body-b,.ui-dialog.ui-overlay-b", _("background body")),
+                     (".ui-btn-up-b", _("buttons and bars")),
+                     (".ui-btn-hover-b", _("buttons and bars, hover state")),
+                     )
+
+    front_end = getattr(settings,'RT_FRONT_END_FRAMEWORK','BOOTSTRAP').upper()
+    extra_classes = getattr(settings,'RT_MORE_STYLE_CLASSES',())
+
+    if (front_end=="BOOTSTRAP"):
+        CLASS_CHOICES = GENERIC_CLASSES + (("",_("---------")),) + BOOTSTRAP_CLASSES + (("",_("---------")),) + extra_classes
+    elif (front_end=="JQUERY-MOBILE"):
+        CLASS_CHOICES = GENERIC_CLASSES + (("",_("---------")),) + JQUERY_MOBILE_CLASSES + (("",_("---------")),) + extra_classes
+    else:
+        CLASS_CHOICES = GENERIC_CLASSES + (("",_("---------")),) + extra_classes
+
     ALIGN_CHOICES = (("left", _("left")),
                      ("center", _("centre")),
                      ("right", _("right"))
