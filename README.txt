@@ -6,7 +6,7 @@ This package contains a number of basic plugins to kick start your Django-CMS pr
 Some default to the Twitter Bootstrap look, but can be adjusted using the setting RT_FRONT_END_FRAMEWORK
 Currently "BOOTSTRAP" and "JQUERY-MOBILE" are recognised.
 
-button                     a Twitter Bootstrap button, with html special characters allowed
+button                     a Twitter Bootstrap or JQueryMobile button, with html special characters allowed
 text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;
 resizeable_picture         a subclass of cms.plugin.picture which allows absolute or % width and height (sorry about the spelling mistake here!)
 navbar                     a Twitter Bootstrap navbar, with self-calculating links to the home page's children, and quick links for admins
@@ -74,7 +74,19 @@ Quick start
                      (".warning", _("warning text")),      # example classes only
                      )
 
-4. Run `python manage.py syncdb` (or use `python manage.py migrate` if you are using South) to create the models.
+4. The button template is configured for Twitter Bootstrap, although the admin panel shows choices appropriate for
+   JQueryMobile as well.
+   If you want to use buttons with JQueryMobile, override the template by adding to your own project the file:
+      templates/button_plugin.html, containing:
 
-5. Add the plugins to your CMS pages in the admin panel.
+      {% load allow_special %}
+      <a data-role="button" {% ifequal instance.button_type "inline" %}data-inline="true"{% endifequal %}
+            {% ifequal instance.button_size "btn-mini" %}data-mini="true"{% endifequal %} data-ajax="false" href="{{ link }}">
+        {{ instance.button_text|allow_special }}
+        {% if instance.arrows %} &raquo; {% endif %}
+      </a>
+
+5. Run `python manage.py syncdb` (or use `python manage.py migrate` if you are using South) to create the models.
+
+6. Add the plugins to your CMS pages in the admin panel.
 

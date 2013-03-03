@@ -4,9 +4,13 @@ from cms.models.pluginmodel import CMSPlugin
 from cms.models.pagemodel import Page
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
+from django.conf import settings
 
 class ButtonPluginModel(CMSPlugin):
-    CLASS_CHOICES =(("", _("default")),
+    front_end = getattr(settings,'RT_FRONT_END_FRAMEWORK','BOOTSTRAP').upper()
+
+    if (front_end=="BOOTSTRAP"):
+        CLASS_CHOICES =(("", _("default")),
                     ("btn-primary", _("primary")),
                     ("btn-info", _("info")),
                     ("btn-success", _("success")),
@@ -14,12 +18,23 @@ class ButtonPluginModel(CMSPlugin):
                     ("btn-danger", _("danger")),
                     ("btn-inverse", _("inverse")),
                     ("btn-link", _("link")),
-    )
-    SIZE_CHOICES = (("", _("default")),
+        )
+        SIZE_CHOICES = (("", _("default")),
                     ("btn-large", _("large")),
                     ("btn-small", _("small")),
                     ("btn-mini", _("mini")),
-                    )
+        )
+    elif (front_end=="JQUERY-MOBILE"):
+        CLASS_CHOICES =(("", _("default")),
+                    ("inline", _("inline")),
+        )
+        SIZE_CHOICES = (("", _("default")),
+                    ("btn-mini", _("mini")),
+        )
+    else:
+        CLASS_CHOICES = ()
+        SIZE_CHOICES  = ()
+
     button_type = models.CharField(_("button type"), max_length=16, blank=True, choices=CLASS_CHOICES)
     button_size = models.CharField(_("button size"), max_length=16, blank=True, choices=SIZE_CHOICES)
     button_link = models.CharField(max_length=80, default='', blank=True)
