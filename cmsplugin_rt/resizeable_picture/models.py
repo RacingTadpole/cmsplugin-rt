@@ -25,8 +25,10 @@ class ResizeablePicturePluginModel(CMSPlugin):
     alt = models.CharField(_("alternate text"), max_length=255, blank=True, null=True, help_text=_("textual description of the image"))
     longdesc = models.CharField(_("long description"), max_length=255, blank=True, null=True, help_text=_("additional description of the image"))
     float = models.CharField(_("side"), max_length=10, blank=True, null=True, choices=FLOAT_CHOICES)
-    img_width = models.CharField(_("width"), max_length=10, blank=True, help_text=_("if present, image will be scaled to this width (in pixels); alternatively enter a percentage of the view, e.g. 100%; the picture will rescale if the window's size changes"))
-    img_height = models.CharField(_("height"), max_length=10, blank=True, help_text=_("if present, image will be scaled to this height (in pixels)"))
+    img_width = models.CharField(_("width"), max_length=10, blank=True, help_text=_("if present, image will be scaled to this width (in pixels), e.g. 100. Alternatively enter a percentage of the view, e.g. 100%; the picture will rescale if the window's size changes"))
+    img_max_width = models.CharField(_("max width"), max_length=10, blank=True, help_text=_("if present, image will not exceed this width (in pixels), e.g. 100. More commonly, enter a percentage of the view, e.g. 100% would prevent the picture from being wider than the view."))
+    img_height = models.CharField(_("height"), max_length=10, blank=True, help_text=_("if present, image will be scaled to this height (in pixels), e.g. 80."))
+    img_max_height = models.CharField(_("max height"), max_length=10, blank=True, help_text=_("if present, image will not exceed this height (in pixels), e.g. 80. Or enter a percentage of the view's height."))
 
     def __unicode__(self):
         if self.alt:

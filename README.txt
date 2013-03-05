@@ -90,3 +90,20 @@ Quick start
 
 6. Add the plugins to your CMS pages in the admin panel.
 
+7. Some plugins use 'spacer', 'align-center', 'align-left', 'align-right' classes, which you should implement in your css, e.g.:
+    .align-right {
+	    float: right;
+    }
+    .align-left {
+	    float: left;
+    }
+    .align-center {
+	    margin-left:auto;
+	    margin-right:auto;
+	    text-align:center;
+	    display: block;  /* text-align:center and display:block are critical to getting this to work */
+    }
+    .spacer {
+	    clear: both;
+    }
+

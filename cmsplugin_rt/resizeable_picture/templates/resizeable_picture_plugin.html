@@ -1,7 +1,15 @@
 <span class="plugin_picture{% if picture.float %} align-{{ picture.float }}{% endif %}">
 {% if link %}<a href="{{ link }}">{% endif %}
-<img src="{{ picture.image.url }}" alt="{{ picture.alt }}"{% if picture.longdesc %} title="{{ picture.longdesc }}"{% endif %}
-{% if width_percent %} style="width:{{ width_percent }}"{% endif %}{% if height_percent %} style="height:{{ height_percent }}"{% endif %}
-{% if width %} width="{{ width }}" style="width:{{ width }}px"{% endif %}{% if height %} height="{{ height }}" style="height:{{ height }}px"{% endif %}/>
+<img src="{{ picture.image.url }}" alt="{{ picture.alt }}"
+{% if picture.longdesc %} title="{{ picture.longdesc }}"{% endif %}
+{% if width %} width="{{ width }}" {% endif %}
+{% if height %} height="{{ height }}" {% endif %}
+style="{% if max_width %}max-width:{{ max_width }}; {% endif %}
+{% if max_height %}max-height:{{ max_height }}; {% endif %}
+{% if width_percent %}width:{{ width_percent }}; {% endif %}
+{% if height_percent %}height:{{ height_percent }}; {% endif %}
+{% if width %}width:{{ width }}px; "{% endif %}
+{% if height %}height:{{ height }}px; "{% endif %}
+" />
 {% if link %}</a>{% endif %}
 </span>

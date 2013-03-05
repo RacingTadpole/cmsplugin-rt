@@ -35,6 +35,16 @@ class ResizeablePicturePlugin(PicturePlugin):
             context["height_percent"] = instance.img_height
         else:
             context["height"] = instance.img_height
+        # to make the user's usage of max_width consistent with width,
+        # we add px to it if needed here
+        if instance.img_max_width.endswith("%"):
+            context["max_width"] = instance.img_max_width
+        elif instance.img_max_width:
+            context["max_width"] = instance.img_max_width+"px"
+        if instance.img_max_height.endswith("%"):
+            context["max_height"] = instance.img_max_height
+        elif instance.img_max_height:
+            context["max_height"] = instance.img_max_height+"px"
         context.update({
             'picture': instance,
             'link': link,
