@@ -42,3 +42,8 @@ Added URL for github repo to setup.py
 -----
 Added desirable css to README
 Added max-height and max-width to resizeable_picture plugin
+
+0.3.3
+-----
+Added id navbar to navbar template, for easier styling
+Defaults meta-icon apple-touch icon to fav-icon if missing

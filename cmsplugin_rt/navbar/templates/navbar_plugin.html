@@ -1,7 +1,7 @@
 {% load menu_tags %}
 {% block navbar %}
       <div class="navbar {% if instance.inverted %}navbar-inverse {% endif %}{{ instance.navbar_type }}">
-        <div class="navbar-inner">
+        <div class="navbar-inner" id="navbar">
           <div class="container">
             <a class="brand" href="/">{% block pagename %}{{ instance.brand }}{% endblock %}</a>
               <ul class="nav">

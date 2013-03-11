@@ -18,6 +18,8 @@ class MetaIconsPlugin(CMSPluginBase):
     render_template = "meta_icons_plugin.html"
 
     def render(self, context, instance, placeholder):
+        if not instance.touch_icon:
+            instance.touch_icon = instance.fav_icon
         context['instance'] = instance
         return context
 
