@@ -21,7 +21,7 @@ class StyleModifierPluginModel(CMSPlugin):
                      )
     
     BOOTSTRAP_CLASSES = (
-                     (".navbar", _("navigation bar")),
+                     (".navbar,#navbar", _("navigation bar")),
                      (".hero-unit", _("hero")),
                      (".jumbotron", _("jumbo banner")),
                      (".container", _("containers")),

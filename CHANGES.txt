@@ -47,3 +47,7 @@ Added max-height and max-width to resizeable_picture plugin
 -----
 Added id navbar to navbar template, for easier styling
 Defaults meta-icon apple-touch icon to fav-icon if missing
+
+0.3.4
+-----
+Added id navbar to style modifier's navbar entry

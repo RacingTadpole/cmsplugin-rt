@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name = 'cmsplugin-rt',
-    version = '0.3.3',
+    version = '0.3.4',
     packages = find_packages(),   #'cmsplugin_rt',   #find_packages(),
     include_package_data = True,
     license = 'BSD License', # example license
