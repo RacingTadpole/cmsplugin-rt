@@ -51,3 +51,7 @@ Defaults meta-icon apple-touch icon to fav-icon if missing
 0.3.4
 -----
 Added id navbar to style modifier's navbar entry
+
+0.3.5
+-----
+Changed style modifier primary button class to .btn.btn-primary (from .btn-primary, which often didn't work as intended)
