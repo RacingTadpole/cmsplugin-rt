@@ -28,7 +28,7 @@ class StyleModifierPluginModel(CMSPlugin):
                      (".btn", _("buttons")),
                      (".btn:hover, .btn:active, .btn.focus, .btn.disabled, .btn[disabled]", _("active buttons")),
                      (".btn.btn-primary", _("primary buttons")),
-                     (".btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary.focus, .btn.btn-primary.disabled, .btn.btn-primary[disabled]", _("active primary buttons")),
+                     (".btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary.focus", _("active primary buttons")),
                      (".dropdown-menu", _("dropdown menus")),
                      (".sidenav a", _("side navigation menu")),
                      (".sidenav .active a", _("active side nav menu")),
