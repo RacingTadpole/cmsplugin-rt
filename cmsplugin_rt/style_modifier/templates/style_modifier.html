@@ -3,7 +3,7 @@
 <style type="text/css">
 {{ instance.mod_class }} {
     {% if instance.background_image %}background-image: url({{ instance.background_image.url }});
-    background-repeat: no-repeat;
+    {#background-repeat: no-repeat;#}
     {% endif %}
     {% if instance.background_color %}background-color: {{ instance.background_color }};{% endif %}
     {% if instance.text_color %}color: {{ instance.text_color }};{% endif %}

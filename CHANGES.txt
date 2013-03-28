@@ -55,3 +55,7 @@ Added id navbar to style modifier's navbar entry
 0.3.5
 -----
 Changed style modifier primary button class to .btn.btn-primary (from .btn-primary, which often didn't work as intended)
+
+0.3.6
+-----
+Changed style modifier - fixed 126-char class name on .btn.btn-primary; and removed background-repeat:no-repeat
