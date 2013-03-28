@@ -59,3 +59,7 @@ Changed style modifier primary button class to .btn.btn-primary (from .btn-prima
 0.3.6
 -----
 Changed style modifier - fixed 126-char class name on .btn.btn-primary; and removed background-repeat:no-repeat
+
+0.3.7
+-----
+Changed google font so it does not assume http
