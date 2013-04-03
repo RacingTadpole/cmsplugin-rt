@@ -68,3 +68,7 @@ Changed google font so it does not assume http
 -----
 Changed allow_special tag so that links with http(s):// do not also need www to be turned into links
 
+0.3.9
+-----
+Fixed small error in prev change
+
