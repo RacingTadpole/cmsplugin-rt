@@ -19,7 +19,7 @@ def allow_special(text, autoescape=None):
     
     addr = r'[A-Za-z0-9\/\.\-]+\.[A-Za-z0-9\/\.\-]+[A-Za-z0-9]'
     mailaddr = r'[A-Za-z0-9\._]+@[A-Za-z0-9\._]+[A-Za-z0-9]'
-    phttp = re.compile(r'(?P<links>https?://www\.'+addr+')')
+    phttp = re.compile(r'(?P<links>https?://'+addr+')')
     pwww = re.compile(r'(?P<links>www\.'+addr+')')
     #pmail = re.compile(r'mailto:(?P<mail>[A-Za-z0-9\._@]+[A-Za-z0-9])')
     pmail = re.compile(r'(?P<mail>'+mailaddr+')')
@@ -39,6 +39,6 @@ def allow_special(text, autoescape=None):
             result += field
         else:
             result += esc(field)
-
+    
     return mark_safe(result)
 

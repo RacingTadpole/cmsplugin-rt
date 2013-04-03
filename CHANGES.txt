@@ -63,3 +63,8 @@ Changed style modifier - fixed 126-char class name on .btn.btn-primary; and remo
 0.3.7
 -----
 Changed google font so it does not assume http
+
+0.3.8
+-----
+Changed allow_special tag so that links with http(s):// do not also need www to be turned into links
+
