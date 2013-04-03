@@ -26,7 +26,7 @@ def allow_special(text, autoescape=None):
     special = r'&#?[0-9a-z]{0,8};'
     pspecial = re.compile(special)
     #p = re.compile(r'(https?://www\.'+addr+'|www\.'+addr+'|mailto:[A-Za-z0-9\._@]+[A-Za-z0-9]|'+special+')')
-    p = re.compile(r'(https?://www\.'+addr+'|www\.'+addr+'|'+mailaddr+'|'+special+')')
+    p = re.compile(r'(https?://'+addr+'|www\.'+addr+'|'+mailaddr+'|'+special+')')
     result = ""
     for field in p.split(text):
         if phttp.match(field):
