@@ -1,5 +1,5 @@
 {% load sekizai_tags %}
-{% addtoblock "js" %}
+{# addtoblock "js" #}  {# Google requests that this be in the head section, so do not let sekizai move it to the end #}
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '{{ instance.account_code }}']);
@@ -13,4 +13,4 @@
   })();
 
 </script>
-{% endaddtoblock %}
+{# endaddtoblock #}
