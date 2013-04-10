@@ -72,3 +72,7 @@ Changed allow_special tag so that links with http(s):// do not also need www to 
 -----
 Fixed small error in prev change
 
+0.4.0
+-----
+Navbar does not display brand if empty (improves display on devices)
+
