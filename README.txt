@@ -19,6 +19,7 @@ twitter_button             lots of options allowed
 mailchimp_form             an inline mailchimp form (tailored to Twitter Bootstrap)
 google_font                link to Google fonts (use them via the style modifier plugin)
 google_analytics           include tracking code for Google analytics
+button_appstore            a simple Download on the Appstore button using code from http://linkmaker.itunes.apple.com/
 
 style_modifier             a plugin that lets the admin change the css directly
                            (a number of Twitter Bootstrap and JQueryMobile classes are pre-configured)
@@ -40,12 +41,13 @@ I built these using:
 Quick start
 -----------
 
-1. Add plugins from cmsplugin-rt to your INSTALLED_APPS setting like this::
+1. Add the desired plugins from cmsplugin-rt to your INSTALLED_APPS setting like this::
 
       INSTALLED_APPS = (
           ...
           'cmsplugin_rt.button',
           'cmsplugin_rt.facebook_button',
+          'cmsplugin_rt.button_appstore',
           'cmsplugin_rt.google_analytics',
           'cmsplugin_rt.google_font',
           'cmsplugin_rt.hbar',
