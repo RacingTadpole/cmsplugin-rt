@@ -5,6 +5,8 @@ cmsplugin-rt
 This package contains a number of basic plugins to kick start your Django-CMS project.
 Some default to the Twitter Bootstrap look, but can be adjusted using the setting RT_FRONT_END_FRAMEWORK
 Currently "BOOTSTRAP" and "JQUERY-MOBILE" are recognised.
+I use this in conjunction with cmsapp-rt, which gives me a global placeholder for the navbar and
+banner pictures, as well as some logic for body padding with a fixed-to-top navbar.
 
 button                     a Twitter Bootstrap or JQueryMobile button, with html special characters allowed
 text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;

@@ -83,3 +83,7 @@ Google requests that the analytics code be in the head section, so do not let se
 0.4.2
 -----
 Added Download on the App Store button
+
+0.4.3
+-----
+Made button usable in the text plugin
