@@ -16,6 +16,7 @@ class ButtonPlugin(CMSPluginBase):
     name = _("Button")
     #module = bootstrap_module_name
     render_template = "button_plugin.html"
+    text_enabled = True
     
     def render(self, context, instance, placeholder):
         context['instance'] = instance
