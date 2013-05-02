@@ -12,7 +12,7 @@ class StyleModifierPluginModel(CMSPlugin):
     """
     Adds a style element to change the css styling on the fly
     """
-    GENERIC_CLASSES = (("body", _("everything")),
+    GENERIC_CLASSES = (("body", _("body (ie. everything)")),
                      ("p", _("paragraphs")),
                      ("hr", _("horizontal lines")),
                      (".plugin_picture", _("picture plugins")),
@@ -22,16 +22,17 @@ class StyleModifierPluginModel(CMSPlugin):
     
     BOOTSTRAP_CLASSES = (
                      (".navbar,#navbar", _("navigation bar")),
+                     ("#navbar li > a", _("navigation bar links")),
+                     (".dropdown-menu", _("dropdown menus")),
+                     ("#navbar .dropdown-menu li > a", _("navbar dropdown links")),
                      (".hero-unit", _("hero")),
-                     (".jumbotron", _("jumbo banner")),
-                     (".container", _("containers")),
+                     (".container, .container-fluid", _("containers")),
                      (".btn", _("buttons")),
                      (".btn:hover, .btn:active, .btn.focus, .btn.disabled, .btn[disabled]", _("active buttons")),
                      (".btn.btn-primary", _("primary buttons")),
                      (".btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary.focus", _("active primary buttons")),
-                     (".dropdown-menu", _("dropdown menus")),
-                     (".sidenav a", _("side navigation menu")),
-                     (".sidenav .active a", _("active side nav menu")),
+                     (".btn-link, .btn-link:hover, .btn-link:active, .btn-link:focus", _("links in forms")),
+                     (".well", _("wells")),
                      )
 
     JQUERY_MOBILE_CLASSES = (
@@ -62,7 +63,7 @@ class StyleModifierPluginModel(CMSPlugin):
     bottom_gradient_color = models.CharField(max_length=32, blank=True, help_text=_("Use a simple name or RGB code. Leave blank for default."))
     font_family = models.CharField(max_length=64, blank=True, help_text=_("Leave blank for default."))
     text_color = models.CharField(max_length=32, blank=True, help_text=_("Use a simple name or RGB code. Leave blank for default."))
-    text_shadow = models.CharField(max_length=32, blank=True, help_text=_("Horizontal and vertical shadow distance followed by a color, e.g. 2px 2px black. Leave blank for default."))
+    text_shadow = models.CharField(max_length=32, blank=True, help_text=_("Horizontal and vertical shadow distance (and optional fuzziness) followed by a color, e.g. 2px 2px black. Leave blank for default."))
     text_align =  models.CharField(max_length=32, blank=True, choices=ALIGN_CHOICES, help_text=_("Leave blank for default."))
     freeform =  models.CharField(max_length=96, blank=True, help_text=_("Enter your own css if desired, e.g. padding: 5px;"))
     def __unicode__(self):

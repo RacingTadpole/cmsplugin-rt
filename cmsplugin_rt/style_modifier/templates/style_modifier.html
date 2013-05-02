@@ -1,9 +1,8 @@
 {% load sekizai_tags %}
 {% addtoblock "css" %}
 <style type="text/css">
-{{ instance.mod_class }} {
-    {% if instance.background_image %}background-image: url({{ instance.background_image.url }});
-    {#background-repeat: no-repeat;#}
+{{ instance.mod_class|safe }} {
+    {% if instance.background_image %}background-image: url({{ instance.background_image.url }});{#background-repeat: no-repeat;#}
     {% endif %}
     {% if instance.background_color %}background-color: {{ instance.background_color }};{% endif %}
     {% if instance.text_color %}color: {{ instance.text_color }};{% endif %}
@@ -14,10 +13,10 @@
 	background-image: -o-linear-gradient(top,{{ instance.bottom_gradient_color }},{{ instance.top_gradient_color }});
 	background-image: linear-gradient(to bottom,{{ instance.bottom_gradient_color }},{{ instance.top_gradient_color }});
     {% endif %}
-    {% if instance.font_family %}font-family: {{ instance.font_family }};{% endif %} 
+    {% if instance.font_family %}font-family: {{ instance.font_family|safe }};{% endif %} 
     {% if instance.text_shadow %}text-shadow: {{ instance.text_shadow }};{% endif %} 
     {% if instance.text_align %}text-align: {{ instance.text_align }};{% endif %} 
-    {% if instance.freeform %}{{ instance.freeform }};{% endif %}
+    {% if instance.freeform %}{{ instance.freeform|safe }};{% endif %}
 }
 </style>
 {% endaddtoblock %}
