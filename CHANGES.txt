@@ -91,3 +91,7 @@ Made button usable in the text plugin
 0.4.4
 -----
 Allowed >, ", ' in some style modifier fields. Remove all <, script and expression.
+
+0.4.5
+-----
+Added active and hover modifiers for navbar links

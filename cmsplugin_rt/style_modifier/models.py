@@ -23,6 +23,8 @@ class StyleModifierPluginModel(CMSPlugin):
     BOOTSTRAP_CLASSES = (
                      (".navbar,#navbar", _("navigation bar")),
                      ("#navbar li > a", _("navigation bar links")),
+                     ("#navbar .active a", _("navigation bar active links")),
+                     ("#navbar a:hover, #navbar a:focus", _("navigation bar hover state")),
                      (".dropdown-menu", _("dropdown menus")),
                      ("#navbar .dropdown-menu li > a", _("navbar dropdown links")),
                      (".hero-unit", _("hero")),
