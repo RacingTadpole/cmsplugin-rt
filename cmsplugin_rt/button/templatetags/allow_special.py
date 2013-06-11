@@ -30,9 +30,9 @@ def allow_special(text, autoescape=None):
     result = ""
     for field in p.split(text):
         if phttp.match(field):
-            result += "<a href='%s'>%s</a>" % (field, field)
+            result += "<a href='%s' target='_blank'>%s</a>" % (field, field)
         elif pwww.match(field):
-            result += "<a href='http://%s'>%s</a>" % (field, field)
+            result += "<a href='http://%s' target='_blank'>%s</a>" % (field, field)
         elif pmail.match(field):
             result += "<a href='mailto:%s'>%s</a>" % (field, field)
         elif pspecial.match(field):

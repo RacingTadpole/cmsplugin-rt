@@ -95,3 +95,7 @@ Allowed >, ", ' in some style modifier fields. Remove all <, script and expressi
 0.4.5
 -----
 Added active and hover modifiers for navbar links
+
+0.4.6
+-----
+Links from text_minimal_markup open in a new tab/window
