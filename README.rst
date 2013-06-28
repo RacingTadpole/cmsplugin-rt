@@ -24,16 +24,16 @@ banner pictures, as well as some logic for body padding with a fixed-to-top navb
 - google_analytics           include tracking code for Google analytics
 - button_appstore            a simple Download on the Appstore button using code from http://linkmaker.itunes.apple.com/
 - style_modifier             a plugin that lets the admin change the css directly
-                           (a number of Twitter Bootstrap and JQueryMobile classes are pre-configured)
-                           add `RT_MORE_STYLE_CLASSES` to settings.py to add more options to the drop-down list
+-                           (a number of Twitter Bootstrap and JQueryMobile classes are pre-configured)
+-                           add `RT_MORE_STYLE_CLASSES` to settings.py to add more options to the drop-down list
 - meta_icons                 include favicon and Apple touch icons in your header
 - open_graph                 include open-graph tags in your header
 - rt_carousel                displays a configurable Bootstrap carousel of a selected group of objects
-                           you will need to add a line like this to settings.py:
-                               `ALLOWED_MODELS_IN_RT_CAROUSEL = [{'app_label':'myapp', 'model':'screenshotgroup'},]`
-                           additional explanation in the comments and at:
-                               http://stackoverflow.com/questions/16999421/how-do-i-adapt-django-foreignkey-to-a-reusable-app
-                           (rt_carousel is under development and still subject to significant change) 
+-                          you will need to add a line like this to settings.py:
+-                              `ALLOWED_MODELS_IN_RT_CAROUSEL = [{'app_label':'myapp', 'model':'screenshotgroup'},]`
+-                          additional explanation in the comments and at:
+-                              http://stackoverflow.com/questions/16999421/how-do-i-adapt-django-foreignkey-to-a-reusable-app
+-                          (rt_carousel is under development and still subject to significant change) 
 
 Detailed documentation is in the "docs" directory (pending).
 
@@ -90,8 +90,7 @@ Quick start
 
 4. The button template is configured for Twitter Bootstrap, although the admin panel shows choices appropriate for
    JQueryMobile as well.
-   If you want to use buttons with JQueryMobile, override the template by adding to your own project the file
-      `templates/button_plugin.html`, containing::
+   If you want to use buttons with JQueryMobile, override the template by adding to your own project the file `templates/button_plugin.html`, containing::
 
       {% load allow_special %}
       <a data-role="button" {% ifequal instance.button_type "inline" %}data-inline="true"{% endifequal %}
