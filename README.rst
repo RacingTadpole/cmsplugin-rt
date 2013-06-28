@@ -17,18 +17,15 @@ banner pictures, as well as some logic for body padding with a fixed-to-top navb
 - self_calc_pagination       shows pagination links where pages after 1 are all the children of page 1 (tailored to Twitter Bootstrap)
 - hbar                       a simple html <hr> element
 - spacer                     adds a .spacer div, which I style as clear:both, to switch off float:left and float:right
-
 - facebook_button            lots of options allowed
 - twitter_button             lots of options allowed
 - mailchimp_form             an inline mailchimp form (tailored to Twitter Bootstrap)
 - google_font                link to Google fonts (use them via the style modifier plugin)
 - google_analytics           include tracking code for Google analytics
 - button_appstore            a simple Download on the Appstore button using code from http://linkmaker.itunes.apple.com/
-
 - style_modifier             a plugin that lets the admin change the css directly
                            (a number of Twitter Bootstrap and JQueryMobile classes are pre-configured)
                            add `RT_MORE_STYLE_CLASSES` to settings.py to add more options to the drop-down list
-
 - meta_icons                 include favicon and Apple touch icons in your header
 - open_graph                 include open-graph tags in your header
 - rt_carousel                displays a configurable Bootstrap carousel of a selected group of objects
@@ -93,8 +90,8 @@ Quick start
 
 4. The button template is configured for Twitter Bootstrap, although the admin panel shows choices appropriate for
    JQueryMobile as well.
-   If you want to use buttons with JQueryMobile, override the template by adding to your own project the file:
-      templates/button_plugin.html, containing::
+   If you want to use buttons with JQueryMobile, override the template by adding to your own project the file
+      `templates/button_plugin.html`, containing::
 
       {% load allow_special %}
       <a data-role="button" {% ifequal instance.button_type "inline" %}data-inline="true"{% endifequal %}
