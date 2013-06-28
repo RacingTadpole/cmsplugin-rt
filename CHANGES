@@ -101,3 +101,8 @@ Added active and hover modifiers for navbar links
 Added draft version of rt_carousel
 Renamed README.txt to README.md
 
+0.4.7
+-----
+Changed README.md to README.rst
+Removed suffixes from CHANGES.txt and LICENSE.txt
+

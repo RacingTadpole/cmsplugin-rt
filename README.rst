@@ -3,35 +3,35 @@ cmsplugin-rt
 =====
 
 This package contains a number of basic plugins to kick start your Django-CMS project.
-Some default to the Twitter Bootstrap look, but can be adjusted using the setting RT_FRONT_END_FRAMEWORK
+Some default to the Twitter Bootstrap look, but can be adjusted using the setting `RT_FRONT_END_FRAMEWORK`.
 Currently "BOOTSTRAP" and "JQUERY-MOBILE" are recognised.
 I use this in conjunction with cmsapp-rt, which gives me a global placeholder for the navbar and
 banner pictures, as well as some logic for body padding with a fixed-to-top navbar.
 
-button                     a Twitter Bootstrap or JQueryMobile button, with html special characters allowed
-text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;
-resizeable_picture         a subclass of cms.plugin.picture which allows absolute or % width and height (sorry about the spelling mistake here!)
-navbar                     a Twitter Bootstrap navbar, with self-calculating links to the home page's children, and quick links for admins
-self_calc_pagination       shows pagination links where pages after 1 are all the children of page 1 (tailored to Twitter Bootstrap)
-hbar                       a simple html <hr> element
-spacer                     adds a .spacer div, which I style as clear:both, to switch off float:left and float:right
+- button                     a Twitter Bootstrap or JQueryMobile button, with html special characters allowed
+- text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;
+- resizeable_picture         a subclass of cms.plugin.picture which allows absolute or % width and height (sorry about the spelling mistake here!)
+- navbar                     a Twitter Bootstrap navbar, with self-calculating links to the home page's children, and quick links for admins
+- self_calc_pagination       shows pagination links where pages after 1 are all the children of page 1 (tailored to Twitter Bootstrap)
+- hbar                       a simple html <hr> element
+- spacer                     adds a .spacer div, which I style as clear:both, to switch off float:left and float:right
 
-facebook_button            lots of options allowed
-twitter_button             lots of options allowed
-mailchimp_form             an inline mailchimp form (tailored to Twitter Bootstrap)
-google_font                link to Google fonts (use them via the style modifier plugin)
-google_analytics           include tracking code for Google analytics
-button_appstore            a simple Download on the Appstore button using code from http://linkmaker.itunes.apple.com/
+- facebook_button            lots of options allowed
+- twitter_button             lots of options allowed
+- mailchimp_form             an inline mailchimp form (tailored to Twitter Bootstrap)
+- google_font                link to Google fonts (use them via the style modifier plugin)
+- google_analytics           include tracking code for Google analytics
+- button_appstore            a simple Download on the Appstore button using code from http://linkmaker.itunes.apple.com/
 
-style_modifier             a plugin that lets the admin change the css directly
+- style_modifier             a plugin that lets the admin change the css directly
                            (a number of Twitter Bootstrap and JQueryMobile classes are pre-configured)
-                           add RT_MORE_STYLE_CLASSES to settings.py to add more options to the drop-down list
+                           add `RT_MORE_STYLE_CLASSES` to settings.py to add more options to the drop-down list
 
-meta_icons                 include favicon and Apple touch icons in your header
-open_graph                 include open-graph tags in your header
-rt_carousel                displays a configurable Bootstrap carousel of a selected group of objects
+- meta_icons                 include favicon and Apple touch icons in your header
+- open_graph                 include open-graph tags in your header
+- rt_carousel                displays a configurable Bootstrap carousel of a selected group of objects
                            you will need to add a line like this to settings.py:
-                               ALLOWED_MODELS_IN_RT_CAROUSEL = [{'app_label':'myapp', 'model':'screenshotgroup'},]
+                               `ALLOWED_MODELS_IN_RT_CAROUSEL = [{'app_label':'myapp', 'model':'screenshotgroup'},]`
                            additional explanation in the comments and at:
                                http://stackoverflow.com/questions/16999421/how-do-i-adapt-django-foreignkey-to-a-reusable-app
                            (rt_carousel is under development and still subject to significant change) 

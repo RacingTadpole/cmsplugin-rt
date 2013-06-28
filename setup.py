@@ -1,14 +1,14 @@
 import os
 from setuptools import setup, find_packages
 
-README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
+README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name = 'cmsplugin-rt',
-    version = '0.4.6',
+    version = '0.4.7',
     packages = find_packages(),   #'cmsplugin_rt',   #find_packages(),
     include_package_data = True,
     license = 'BSD License', # example license
