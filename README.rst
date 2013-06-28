@@ -8,6 +8,8 @@ Currently "BOOTSTRAP" and "JQUERY-MOBILE" are recognised.
 I use this in conjunction with cmsapp-rt, which gives me a global placeholder for the navbar and
 banner pictures, as well as some logic for body padding with a fixed-to-top navbar.
 
+::
+
 - button                     a Twitter Bootstrap or JQueryMobile button, with html special characters allowed
 - text_minimal_markup        plain text with an h2 heading, with links and email addresses activated and html special codes allowed, e.g. &copy;
 - resizeable_picture         a subclass of cms.plugin.picture which allows absolute or % width and height (sorry about the spelling mistake here!)
@@ -76,13 +78,13 @@ Quick start
           'cmsplugin_rt.twitter_button',
       )
 
-2. If you are using JQueryMobile, add to settings.py:
+2. If you are using JQueryMobile, add to settings.py::
 
       RT_FRONT_END_FRAMEWORK = "JQUERY-MOBILE"  # "BOOTSTRAP" is the default; only these two are known
 
    You can also set this to "" to remove Style Modifier's default Bootstrap class options.
 
-3. To add custom classes to the Style Modifier, add to settings.py something like this:
+3. To add custom classes to the Style Modifier, add to settings.py something like this::
 
       from django.utils.translation import ugettext_lazy as _
       RT_MORE_STYLE_CLASSES = ((".banner", _("banner")),
@@ -92,7 +94,7 @@ Quick start
 4. The button template is configured for Twitter Bootstrap, although the admin panel shows choices appropriate for
    JQueryMobile as well.
    If you want to use buttons with JQueryMobile, override the template by adding to your own project the file:
-      templates/button_plugin.html, containing:
+      templates/button_plugin.html, containing::
 
       {% load allow_special %}
       <a data-role="button" {% ifequal instance.button_type "inline" %}data-inline="true"{% endifequal %}
@@ -105,20 +107,21 @@ Quick start
 
 6. Add the plugins to your CMS pages in the admin panel.
 
-7. Some plugins use 'spacer', 'align-center', 'align-left', 'align-right' classes, which you should implement in your css, e.g.:
+7. Some plugins use 'spacer', 'align-center', 'align-left', 'align-right' classes, which you should implement in your css, e.g.::
+
     .align-right {
-	    float: right;
+      float: right;
     }
     .align-left {
-	    float: left;
+      float: left;
     }
     .align-center {
-	    margin-left:auto;
-	    margin-right:auto;
-	    text-align:center;
-	    display: block;  /* text-align:center and display:block are critical to getting this to work */
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+      display: block;  /* text-align:center and display:block are critical to getting this to work */
     }
     .spacer {
-	    clear: both;
+      clear: both;
     }
 

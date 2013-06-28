@@ -106,3 +106,6 @@ Renamed README.txt to README.md
 Changed README.md to README.rst
 Removed suffixes from CHANGES.txt and LICENSE.txt
 
+0.4.8
+-----
+Changed README formatting
