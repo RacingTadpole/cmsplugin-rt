@@ -95,3 +95,9 @@ Allowed >, ", ' in some style modifier fields. Remove all <, script and expressi
 0.4.5
 -----
 Added active and hover modifiers for navbar links
+
+0.4.6
+-----
+Added draft version of rt_carousel
+Renamed README.txt to README.md
+

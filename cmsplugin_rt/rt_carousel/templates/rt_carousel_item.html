@@ -1,0 +1,21 @@
+{% load placeholder_tags %}
+<div class="row" id="{{ item.name|slugify }}">
+	<div class="span6 {% ifnotequal display_as "list" %}rt-carousel-text{% endifnotequal %}">
+		<div class="{% ifequal display_as "list" %}rt-list-text-cell{% else %}item-carousel-text-cell{% endifequal %}" 
+			style="height:{{ instance.height }}px;{% ifequal display_as "bootstrap" %}text-align: center;{% endifequal %}">
+			<h2>{{ item.name }}</h2>
+			<p>{{ item.promo_text|urlize|linebreaksbr }}</p>
+			{% if item.more_placeholder %}<div class="item-carousel-more"><p>{% render_placeholder item.more_placeholder %}</p></div>{% endif %}
+		</div>
+	</div>
+	<div class="span4 offset1 {% ifequal display_as "list" %}rt-list-image{% endifequal %}" style="text-align:center;">
+			{% if item.flagship_image %}
+			<div style="margin-top: {{ item.flagship_margin_top }}px;">
+				{% if item.page %}{% ifnotequal display_as "list" %}<a href="{{ item.page.get_absolute_url }}">{% endifnotequal %}{% endif %}
+					 <img class="rt-carousel-image" src="{{ item.flagship_image.url }}" alt="{{ item.name }}">
+				{% if item.page %}{% ifnotequal display_as "list" %}</a>{% endifnotequal %}{% endif %}
+			</div>
+			{% endif %}
+			{# if item.image_placeholder %}{% render_placeholder item.image_placeholder %}{% endif #}
+	</div>
+</div>
