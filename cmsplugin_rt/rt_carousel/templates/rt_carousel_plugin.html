@@ -27,8 +27,8 @@
     {% empty %}Error - nothing to show
     {% endfor %} {# item in item_list #}
   </div><!-- .carousel-inner -->
-  {% ifequal display_as "bootstrap" %}
+  {% ifequal display_as "bootstrap" %}{% ifnotequal item_list.count 1 %}
   <a class="carousel-control left" href="#rt-carousel-{{ uuid }}" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#rt-carousel-{{ uuid }}" data-slide="next">&rsaquo;</a>
-  {% endifequal %}
+  {% endifnotequal %}{% endifequal %}
 </div><!-- #rt-carousel-{{ uuid }} -->
