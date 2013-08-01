@@ -1,0 +1,67 @@
+/* RTCarousel */
+
+.carousel {
+	line-height: 20px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-bottom: 5px;
+	display: block;
+    padding: 4px;
+	background: #f5f5f5;
+    border: 1px solid #ddd;
+   	box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+} /* undoes bootstrap's .carousel css */
+
+@media only screen and (min-width: 767px) {
+	.rt-carousel-text {
+		position: relative;
+		left: 10%;
+		/* margin-left: 100px; /* would be ignored because of .row-fluid */
+	}
+	.rt-carousel-text-cell {
+		display:table-cell; 
+		vertical-align:middle;
+	}
+}  /* maybe display: table-cell; vertical-align: middle; would work?*/
+
+.rt-carousel-more {
+	margin-top: 23px;
+}
+
+.rt-carousel-image {
+	max-height:100%; 
+	vertical-align: middle;
+}
+
+.rt-mini-carousel-item {
+	text-align:center; 
+	height:90%; 
+	margin-top:-40px;
+}
+
+.rt-mini-carousel-image { /* does not respond to screen width */
+	max-height:100%;
+	/*display: table-cell;
+	vertical-align: middle;*/
+}
+
+.rt-list-text-cell {
+	display:table-cell; 
+	vertical-align:middle;
+}
+
+@media only screen and (max-width: 767px) {
+	.rt-carousel-text {
+		text-align: center;
+		line-height: 20px; /* undoes bootstrap's .carousel css */
+		/*display: none;     is ignored by .row-fluid, but not by .row... */
+		max-height: 0px;
+	}
+	.rt-carousel-text h2 {font-size:160%}
+	.rt-carousel-text p {display:none}
+	.rt-carousel-image {height:70%; margin-top:40px;}
+	.rt-list-image {display:none;}
+}

@@ -1,0 +1,8 @@
+<div class="rt-mini-carousel-item">
+{% if item.flagship_image %}
+	{% if item.page %}<a href="{{ item.page.get_absolute_url }}">{% endif %}
+		<img class="item-mini-carousel-image" src="{{ item.flagship_image.url }}" alt="{{ item.name }}" style="margin-top: {{ item.mini_flagship_margin_top }}px;" >
+	{% if item.page %}</a>{% endif %}
+{% endif %}
+</div>
+<h4 style="text-align:center">{{ item.promo_text }}</h4>

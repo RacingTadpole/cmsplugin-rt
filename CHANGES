@@ -98,8 +98,21 @@ Added active and hover modifiers for navbar links
 
 0.4.6
 -----
-Links from text_minimal_markup open in a new tab/window
+Added draft version of rt_carousel
 
 0.4.7
+-----
+Changed README.md to README.rst
+Removed suffixes from CHANGES.txt and LICENSE.txt
+
+0.4.8
+-----
+Changed README formatting
+
+0.4.9
+-----
+If only one item in the carousel, do not show fwd and back buttons
+
+0.5.0
 -----
 Fix duplication problem with button links in admin, as per link plugin

@@ -1,0 +1,34 @@
+{% load sekizai_tags static %}
+{% addtoblock "css" %}
+<link href="{% static 'css/rt_carousel.css' %}" rel="stylesheet">
+{% endaddtoblock %}
+{% if instance.animated %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#rt-carousel-{{ uuid }}').carousel();
+  });
+</script>
+{% endaddtoblock %}
+{% endif %} {# animated #}
+
+<div id="rt-carousel-{{ uuid }}" {% ifequal display_as "bootstrap" %}class="carousel slide"{% endifequal %}>
+  <div {% ifequal display_as "bootstrap" %}class="carousel-inner"{% endifequal %}>
+    {% for item in item_list %}
+    {% ifequal display_as "list" %}{% if not forloop.first %}<hr>{% endif %}{% endifequal %}
+    <div class="item{% if forloop.first %} active{% endif %}" style="height:{{ instance.height }}px; margin:{{ instance.margin }};">{# active on the first item #}
+    {% if instance.mini %}
+      {% include "rt_carousel_mini_item.html" %}
+    {% else %}
+      {% include "rt_carousel_item.html" %}
+    {% endif %} {# instance.mini #}
+
+    </div>
+    {% empty %}Error - nothing to show
+    {% endfor %} {# item in item_list #}
+  </div><!-- .carousel-inner -->
+  {% ifequal display_as "bootstrap" %}{% ifnotequal item_list.count 1 %}
+  <a class="carousel-control left" href="#rt-carousel-{{ uuid }}" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#rt-carousel-{{ uuid }}" data-slide="next">&rsaquo;</a>
+  {% endifnotequal %}{% endifequal %}
+</div><!-- #rt-carousel-{{ uuid }} -->

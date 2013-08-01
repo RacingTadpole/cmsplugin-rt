@@ -1,4 +1,7 @@
-include LICENSE.txt
-include CHANGES.txt
+include LICENSE
+include CHANGES
+include README.rst
 recursive-include docs *
 recursive-include cmsplugin_rt/*/templates *
+recursive-include cmsplugin_rt/*/static *
+recursive-include cmsplugin_rt/*/fixtures *
