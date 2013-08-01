@@ -4,7 +4,8 @@ from cms.models.pluginmodel import CMSPlugin
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
-from models import *
+from .models import ButtonPluginModel
+from .forms import ButtonForm
 
 bootstrap_module_name = _("Widgets")
 layout_module_name = _("Layout elements")
@@ -13,6 +14,7 @@ meta_module_name = _("Meta elements")
 
 class ButtonPlugin(CMSPluginBase):
     model = ButtonPluginModel
+    form = ButtonForm
     name = _("Button")
     #module = bootstrap_module_name
     render_template = "button_plugin.html"

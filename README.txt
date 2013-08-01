@@ -40,6 +40,11 @@ I built these using:
 * Django 1.4
 * Django-CMS 2.3.5
 
+I now use them on
+
+* Django 1.5
+* Django-CMS 2.4.2
+
 Quick start
 -----------
 

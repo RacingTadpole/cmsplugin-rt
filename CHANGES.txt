@@ -99,3 +99,7 @@ Added active and hover modifiers for navbar links
 0.4.6
 -----
 Links from text_minimal_markup open in a new tab/window
+
+0.4.7
+-----
+Fix duplication problem with button links in admin, as per link plugin
