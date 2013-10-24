@@ -116,3 +116,7 @@ If only one item in the carousel, do not show fwd and back buttons
 0.5.0
 -----
 Fix duplication problem with button links in admin, as per link plugin
+
+0.5.1
+-----
+Allow button link to be 240 chars (was 80)

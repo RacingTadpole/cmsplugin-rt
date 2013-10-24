@@ -37,9 +37,9 @@ class ButtonPluginModel(CMSPlugin):
 
     button_type = models.CharField(_("button type"), max_length=16, blank=True, choices=CLASS_CHOICES)
     button_size = models.CharField(_("button size"), max_length=16, blank=True, choices=SIZE_CHOICES)
-    button_link = models.CharField(max_length=80, default='', blank=True)
+    button_link = models.CharField(max_length=240, default='', blank=True)
     page_link = models.ForeignKey(Page, verbose_name=_("page"), blank=True, null=True, help_text=_("A link to a page overrides the above button link."))
-    button_text = models.CharField(max_length=80, default='here', help_text=_("HTML symbol codes are allowed, e.g. &amp;hearts; for &hearts;."))
+    button_text = models.CharField(max_length=80, default='Click here', help_text=_("HTML symbol codes are allowed, e.g. &amp;hearts; for &hearts;."))
     arrows = models.BooleanField()
     
     def __unicode__(self):
